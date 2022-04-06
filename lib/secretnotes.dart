@@ -22,7 +22,6 @@ class _SecretNotesScreenState extends State<SecretNotesScreen> {
           style: const TextStyle(fontSize: 30),
         ),
         TextField(
-          //                       <--- TextField
           onChanged: (text) {
             _doSomething(text);
           },
