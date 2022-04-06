@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(color: Color(0xFF7D4F52)),
                     borderRadius: BorderRadius.circular(
-                        10), //circular border for TextField.
+                        10), 
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -107,12 +107,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 onChanged: (value) {
                   print(value);
                 },
-                obscureText: hidePassword, //show/hide password
+                obscureText: hidePassword,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(color: Color(0xFF7D4F52)),
                     borderRadius: BorderRadius.circular(
-                        10), //circular border for TextField.
+                        10), 
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
-                        10), //circular border for TextField.
+                        10),
                   ),
                 ),
               ),
