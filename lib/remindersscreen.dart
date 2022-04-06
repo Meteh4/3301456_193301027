@@ -30,9 +30,7 @@ class RemindersScreen extends StatelessWidget {
           ),
           backgroundColor: const Color(0xFF7D4F52),
           foregroundColor: const Color(0xFFFEEAE6),
-          onPressed: () {
-            // Respond to button press
-          },
+          onPressed: () {},
           icon: const Icon(Icons.add),
           label: const Text('Add Reminders'),
         ));
