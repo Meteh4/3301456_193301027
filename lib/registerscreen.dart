@@ -57,10 +57,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 onChanged: (value) {
                   print(value);
                 },
-                obscureText: hidePassword,
+                obscureText: hidePassword, //show/hide password
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(
+                        10), //circular border for TextField.
                   ),
                 ),
               ),
@@ -82,7 +83,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 onChanged: (value) {
                   print(value);
                 },
-                obscureText: hidePassword,
+                obscureText: hidePassword, //show/hide password
                 decoration: InputDecoration(
                   prefixIcon: const Icon(Icons.lock),
                   suffixIcon: IconButton(
@@ -96,7 +97,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                   ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(
+                        10), //circular border for TextField.
                   ),
                 ),
               ),
