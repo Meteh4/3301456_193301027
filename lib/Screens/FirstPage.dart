@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:preview_1/secretnotes.dart';
+import 'package:preview_1/Screens/Firestore.dart';
 import 'package:iconly/iconly.dart';
-import 'package:preview_1/infoscreen.dart';
-import 'package:preview_1/loginscreen.dart';
 
-import 'homescreen.dart';
-import 'notesscreen.dart';
-import 'remindersscreen.dart';
+import '../Screens/HomeScreen.dart';
+import '../Screens/RemindersScreen.dart';
+import 'LogoutScreen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -38,10 +35,13 @@ class _HomePageState extends State<HomePage> {
 
   final _pageOptions = [
     const HomeScreen(),
-    const NotesScreen(),
-    const RemindersScreen(),
-    const SecretNotesScreen(),
+    const RemindersScreen(
+      title: '',
+    ),
+    const FireStore(),
   ];
+
+  get child => null;
 
   @override
   Widget build(BuildContext context) {
@@ -56,10 +56,10 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const InfoScreen()),
+                MaterialPageRoute(builder: (context) => HoSc()),
               );
             },
-          )
+          ),
         ],
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         title: const Text(
-          'Welcome',
+          'Material Notepad',
           style: TextStyle(
             color: Color(0xFF442B2D),
             fontSize: 25.0,
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(IconlyLight.tick_square),
-              label: 'Reminders',
+              label: 'Syncing Notes',
               backgroundColor: Color(0xFFFEEAE6),
               activeIcon: Icon(IconlyBold.tick_square),
             ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:preview_1/giris.dart';
 import 'dart:math' as math;
 import 'package:iconly/iconly.dart';
 

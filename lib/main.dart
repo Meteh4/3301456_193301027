@@ -1,16 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:preview_1/giris.dart';
-import 'package:preview_1/secretnotes.dart';
-import 'package:preview_1/remindersscreen.dart';
+import 'package:preview_1/Screens/FirstPage.dart';
 import 'package:iconly/iconly.dart';
+import 'package:preview_1/firebase_options.dart';
 
-import 'loginscreen.dart';
-import 'registerscreen.dart';
+import 'Screens/LoginScreen.dart';
+import 'Screens/RegisterScreen.dart';
 
-void main() => runApp(const App());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const App());
+}
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -73,45 +79,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       ),
       pages: [
         PageViewModel(
-          title: "",
+          title: "Fractional shares",
+          body:
+              "Instead of having to buy an entire share, invest any amount you want.",
+          image: Image.asset('images/giris.png'),
           decoration: pageDecoration,
-          bodyWidget: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              color: const Color(0xFFFEEAE6),
-              border: Border.all(
-                color: const Color(0xFF7D4F52),
-              ),
-            ),
-            width: 400.0,
-            height: 500.0,
-            child: Center(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
-                    Center(
-                      child: Text(
-                        'Merhaba',
-                        style: TextStyle(
-                            color: Color(0xFF442B2D),
-                            height: -6,
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    Center(
-                      child: Text(
-                        ' Bu uygulama Selçuk Üniversitesi Bilgisayar Mühendisliği Bölümünden Metehan Soydan isimli öğrenci tarafından yapılmıştır.',
-                        style: TextStyle(
-                            color: Color(0xFF7D4F52),
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                      ),
-                    )
-                  ]),
-            ),
-          ),
         ),
         PageViewModel(
           title: "",
@@ -220,8 +192,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginScreen()),
+                      MaterialPageRoute(builder: (context) => const LoginScreen()),
                     );
                   },
                   child: const Text(
@@ -239,8 +210,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const RegisterScreen()),
+                      MaterialPageRoute(builder: (context) => RegisterScreen()),
                     );
                   },
                   child: const Text(
